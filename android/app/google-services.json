@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "223014142158",
+    "project_id": "wordrobe-12107",
+    "storage_bucket": "wordrobe-12107.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:223014142158:android:ef1dbdbbfd335f7245109f",
+        "android_client_info": {
+          "package_name": "dev.wordrobe.abhishek"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "223014142158-b5nusdrukv98gvrn0g6k6ji4gqlbgmpa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBgc_XAV3ZFTmA31HTTlIu24qUXRjWy63o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "223014142158-b5nusdrukv98gvrn0g6k6ji4gqlbgmpa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

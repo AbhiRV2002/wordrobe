@@ -1,0 +1,48 @@
+<!-- <ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-back-button slot="start"></ion-back-button>
+    <ion-title>history</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content [fullscreen]="true" color="primary">
+  <div class="header">
+    <p class="title"><ion-back-button text=""></ion-back-button>History</p>
+  </div>
+  <!-- <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large"><ion-icon name="chevron-back-outline"></ion-icon>History</ion-title>
+    </ion-toolbar>
+  </ion-header> -->
+  <div class="ion-padding table-container">
+    <div class="table">
+      <ion-row class="row" *ngFor="let dress of snap.slice().reverse()">
+        <ion-col class="ion-padding ion-text-center" size="12"
+          ><p class="p3">{{dress.key}}</p>
+          <p class="p3">{{dress.day}}</p></ion-col
+        >
+        <ion-col size="12">
+          <ion-row>
+            <ion-col
+              ><ion-row
+                ><ion-col size="4"><p class="p3">Type :</p></ion-col
+                ><ion-col size="8"
+                  ><p class="p3">{{dress.type}}</p></ion-col
+                ></ion-row
+              >
+              <ion-row>
+                <ion-col size="4"><p class="p3">Color :</p></ion-col>
+                <ion-col size="8"
+                  ><p class="p3">{{dress.color}}</p></ion-col
+                ></ion-row
+              ></ion-col
+            >
+            <ion-col size="3">
+              <ion-img src="{{dress.image}}"></ion-img>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+    </div>
+  </div>
+</ion-content>

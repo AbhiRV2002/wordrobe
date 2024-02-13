@@ -1,0 +1,7 @@
+{
+  "name": "wordrobe_v2",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

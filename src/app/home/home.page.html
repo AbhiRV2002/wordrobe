@@ -1,0 +1,112 @@
+<!-- <ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title slot="start"> Wordrobe </ion-title>
+    <ion-buttons slot="end">
+      <ion-button [routerLink]="['/history']"
+        ><ion-icon slot="end" name="chevron-forward-outline"></ion-icon> History
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content [fullscreen]="true" color="primary">
+  <div class="header">
+    <p class="title">Wordrobe</p>
+    <ion-select
+      color="light"
+      class="selectTheme"
+      interface="alert"
+      #mySelect
+      [(ngModel)]="selectTheme"
+      (ionChange)="dynamicTheme()"
+    >
+      <ion-select-option
+        color="light"
+        [value]="theme.class"
+        *ngFor="let theme of themeColor;let i = index"
+      >
+        {{theme.name}}
+      </ion-select-option>
+    </ion-select>
+
+    <div class="menubtns">
+      <ion-icon
+        name="shirt"
+        class="hbtn"
+        (click)="openSelect()"
+        slot="end" size="large"
+      ></ion-icon>
+      <ion-icon name="calendar" class="hbtn" [routerLink]="['/history']" size="large"></ion-icon>
+      <!-- <i (click)="openSelect()" class="fa-solid fa-brush fa-2x hbtn"></i>
+      <i class="fa-solid fa-bars fa-2x hbtn" [routerLink]="['/history']"></i> -->
+
+    </div>
+  </div>
+  <div class="select">
+    <p class="p1">Select Shirt</p>
+  </div>
+  <swiper-container
+    [slidesPerView]="1.2"
+    class="ion-padding"
+    [loop]="true"
+    [spaceBetween]="24"
+    [breakpoints]="breakpoints"
+    [autoplay]="true"
+  >
+    <swiper-slide *ngFor="let shirt of shirts"
+      ><div class="card" color="primary">
+        <ion-img src="{{shirt.image}}"></ion-img>
+        <div class="flex-between">
+          <div class="">
+            <p class="p2">{{shirt.color}}</p>
+            <p class="p3">{{shirt.type}}</p>
+          </div>
+          <div class="">
+            <ion-toggle
+              color="{{shirt.button}}"
+              value="{{shirt.color}}"
+              class="toggle"
+              (ionChange)="change($event,shirt.type,shirt.color,shirt.image)"
+            ></ion-toggle>
+          </div>
+        </div></div
+    ></swiper-slide>
+  </swiper-container>
+  <div class="select">
+    <p class="p1">Today’s Dress</p>
+  </div>
+  <div class="ion-padding table-container">
+    <div class="table">
+      <ion-row>
+        <ion-col class="ion-padding" size="6"><p class="p3">Date :</p></ion-col>
+        <ion-col class="ion-padding" size="6"
+          ><p class="p3">{{dress.date}}</p></ion-col
+        >
+        <ion-col class="ion-padding" size="6"><p class="p3">Type :</p></ion-col>
+        <ion-col class="ion-padding" size="6"
+          ><p class="p3">{{dress.type}}</p></ion-col
+        >
+        <ion-col class="ion-padding" size="6"
+          ><p class="p3">Color :</p></ion-col
+        >
+        <ion-col class="ion-padding" size="6"
+          ><p class="p3">{{dress.color}}</p></ion-col
+        >
+        <ion-col size="12" class="ion-padding">
+          <ion-img
+            src="{{dress.image}}"
+            onerror="src='https://i.ibb.co/GCsbdHj/noimg.png'"
+          ></ion-img>
+        </ion-col>
+      </ion-row>
+    </div>
+  </div>
+</ion-content>
+<ion-footer>
+
+  <div class="ion-padding footer">
+    <div class="confirm" (click)="confirm()">
+      <p class="p4">Confirm</p>
+    </div>
+  </div>
+</ion-footer>
